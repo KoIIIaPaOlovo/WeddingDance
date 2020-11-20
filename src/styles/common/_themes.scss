@@ -1,0 +1,14 @@
+@mixin themes ($theme-name, $theme-color, $text-color, $button-color-hover) {
+    .#{$theme-name} {
+        .wrapper {
+            background-color: $theme-color;
+            color: $text-color;
+        }
+    }
+}
+
+$main-color: #fff;
+
+// theme-name, theme-color, theme-text, btn-hover
+@include themes(light-theme, #fff, #000, #000);
+@include themes(dark-theme, #252525, $main-color, #252525);
