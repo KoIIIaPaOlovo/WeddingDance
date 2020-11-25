@@ -21,6 +21,16 @@ body {
     margin: 0 auto;
 }
 
+.accent-button{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 11px 40px 10px 40px;
+    border-radius: 3px;
+    border: 2px solid $accent-color;
+    background-color: transparent;
+    color: $accent-color;
+}
+
 
 .header{
     position: fixed;
@@ -28,6 +38,7 @@ body {
     left: 0px;
     width: 100%;
     background-color: white;
+    z-index: 1;
     &__wrapper{
         padding: 20px 0px;
         display: flex;
@@ -53,7 +64,7 @@ body {
 .logo{
     font-family: 'Montserrat',sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: $bold;
 }
 
 .navigation{
@@ -102,7 +113,7 @@ body {
     }
     &__title{
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
+        font-weight: $bold;
         font-size: 72px;
         margin-top: 65px;
         line-height: 0.95;
@@ -122,22 +133,17 @@ body {
     }
     &__button{
         margin-top: 40px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-        padding: 11px 40px 10px 40px;
         margin-bottom: 80px;
-        border-radius: 3px;
-        border: 2px solid $accent-color;
-        background-color: transparent;
-        color: $accent-color;
     }
     &__image{
+        width: 840px;
+        min-width: 840px;
+        max-width: 840px;
         margin-left: 77px;
-        background-color: rgb(180, 180, 180);
+        background-color: $bg-img-color;
         & img{
             height: 100%;
-            width: 840px;
-            max-width: 840px;
+            width: 100%;
             object-fit: cover;
         }
     }
@@ -145,7 +151,7 @@ body {
 
 .title{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: $bold;
     font-size: 36px;
     line-height: 0.9;
     margin-top: 100px;
@@ -180,7 +186,7 @@ body {
     box-shadow: 0px 4px 30px rgba(207, 207, 207, 0.25);
     border-radius: 2px;
     &__image{
-        background-color: rgb(180, 180, 180);
+        background-color: $bg-img-color;
         width: 100%;
         height: 421px;
         margin-bottom: 40px;
@@ -192,8 +198,8 @@ body {
     }
     &__name{
         font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        font-size: 24px;
+        font-weight: $bold;
+        font-size: $small-title-size;
         line-height: 0.9;
         margin-bottom: 24px;
     }
@@ -205,6 +211,187 @@ body {
         padding: 0px 24px 24px 24px;
     }
 }
+
+.advantages{
+    &__title{
+        margin-top: 80px;
+    }
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+}
+
+.advantage{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(25% - 10px);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    &__icon{
+        font-size: 60px;
+        color: $accent-color;
+        margin-bottom: 14px;
+    }
+    &__text{
+        text-align: center;
+        max-width: 187px;
+        line-height: 1.5;
+    }
+}
+
+.coaches{
+    &__slider{
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-right: -16px;
+        overflow: hidden;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-top: 26px;
+        padding-bottom: 60px;
+        margin-bottom: 50px;
+    }
+    & .slick-active{
+        & .coach{
+            box-shadow: 0px 4px 30px rgba(207, 207, 207, 0.25);
+        }
+    }
+    & .slick-list{
+        overflow: visible;
+    }
+    & .slick-arrow{
+        display: block;
+        font-size: 0px;
+        padding: 0px;
+        height: 28px;
+        width: 40px;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        &::before{
+            width: 100%;
+            height: 100%;
+            background-image: url("./src/assets/img/slick-arrow.svg");
+            content: " ";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+        }
+    }
+    & .slick-prev{
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform-origin: center center;
+        transform: translateX(calc(-50% - 75px)) rotate(180deg);
+    }
+    & .slick-next{
+        position: absolute;
+        bottom: 0px;
+        right: 50%;
+        transform: translateX(calc(50% + 75px));
+    }
+    & .slick-disabled{
+        opacity: .3;
+    }
+    &__slider-wrapper{
+        position: relative;
+    }
+    &__slider-count{
+        display: inline-block;
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.coach{
+    display: flex;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    border-radius: 2px;
+    transition: 200ms ease-out;
+    &__image{
+        width: 300px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        background-color: $bg-img-color;
+        height: 440px;
+        & img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+    }
+    &__info{
+        padding: 43px 33px;
+    }
+    &__button{
+        &--mobile{
+            display: none;
+        }
+    }
+    &__number{
+        font-size: $text-size;
+        font-weight: $bold;
+        line-height: 0.9;
+        margin-bottom: 8px;
+    }
+    &__name{
+        font-size: $small-title-size;
+        font-weight: $bold;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+    &__profession{
+        line-height: 1.2;
+        font-size: $text-size;
+        margin-bottom: 24px;
+    }
+    &__skill{
+        font-size: $text-size;
+        margin-bottom: 16px;
+        & span{
+            opacity: .5;
+        }
+    }
+    &__button{
+        margin-top: 50px;
+    }
+}
+
+.footer{
+    background-color: #1f1f1f;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo{
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    &__copyright{
+        color: white;
+    }
+}
+
+
 
 .burger-button{
     height: 20px;
@@ -284,7 +471,7 @@ body {
     }
     &__title{
         font-family: 'Montserrat',sans-serif;
-        font-weight: 700;
+        font-weight: $bold;
         font-size: 36px;
         line-height: 0.9;
         margin-bottom: 45px;
@@ -328,10 +515,9 @@ body {
     .top{
         &__image{
             margin-left: 60px;
-            & img{
-                width: 550px;
-                max-width: 550px;
-            }
+            width: 550px;
+            min-width: 550px;
+            max-width: 550px;
         }
     }
     .service{
@@ -341,11 +527,21 @@ body {
             margin-bottom: 30px;
         }
     }
+    .coach{
+        &__info{
+            padding: 20px;
+        }
+        &__image{
+            width: 220px;
+            height: 370px;
+        }
+    }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
     $text-size: 14px;
     $title-size: 28px;
+    $small-title-size: 18px;
     .title{
         font-size: $title-size;
         margin-top: 70px;
@@ -360,6 +556,7 @@ body {
     }
     .container{
         max-width: 768px;
+        padding:0 15px;
     }
     .header{
         &__navigation{
@@ -380,7 +577,7 @@ body {
             margin-left: -2px;
         }
         &__subtitle{
-            font-size: 18px;
+            font-size: $small-title-size;
             margin-top: 10px;
             margin-bottom: 25px;
         }
@@ -390,10 +587,9 @@ body {
         }
         &__image{
             margin-left: 30px;
-            & img{
-                width: 420px;
-                max-width: 420px;
-            }
+            width: 420px;
+            max-width: 420px;
+            min-width: 420px;
         }
     }
 
@@ -403,7 +599,7 @@ body {
             padding: 0px 14px 14px 14px;
         }
         &__name{
-            font-size: 18px;
+            font-size: $small-title-size;
             margin-bottom: 18px;
         }
         &__text{
@@ -421,7 +617,7 @@ body {
     .navigation{
         font-family: 'Montserrat', sans-serif;
         font-size: 24px;
-        font-weight: 700;
+        font-weight: $bold;
         line-height: 0.9;
         &__list{
             flex-direction: column;
@@ -432,6 +628,34 @@ body {
         }
     }
 
+    .advantage{
+        &__text{
+            font-size: 13px;
+            max-width: 152px;
+        }
+    }
+
+    .coach{
+        &__info{
+            padding: 30px;
+        }
+        &__number{
+            font-size: $text-size;
+        }
+        &__name{
+            font-size: $small-title-size;
+        }
+        &__profession{
+            font-size: $text-size;
+        }
+        &__skill{
+            font-size: $text-size;
+        }
+        &__image{
+            width: 350px;
+            height: 400px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -445,11 +669,11 @@ body {
             flex-direction: column-reverse;
         }
         &__image{
-            width: calc(100% + 40px);
-            margin-left: -20px;
+            width: calc(100% + 30px);
+            max-width: calc(100% + 30px);
+            min-width: calc(100% + 30px);
+            margin-left: -15px;
             & img{
-                max-width: none;
-                width: 100%;
                 height: 320px;
             }
         }
@@ -476,9 +700,46 @@ body {
             height: 425px;
         }
     }
+
+    .advantage{
+        width: calc(50% - 10px);
+        margin-bottom: 30px;
+        &__icon{
+            font-size: 50px;
+            margin-bottom: 8px;
+        }
+    }
+
+    .coach{
+        align-items: center;
+        &__info{
+            padding: 35px 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__image{
+            width: 200px;
+        }
+        &__skill{
+            display: flex;
+            flex-direction: column;
+            line-height: 1.4;
+        }
+    }
+
+    .accent-button{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .footer{
+        &__logo{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 424px) {
     .top{
         &__image{
             & img{
@@ -499,6 +760,92 @@ body {
     .service{
         &__image{
             height: 280px;
+        }
+    }
+    .advantage{
+        &__icon{
+            font-size: 40px;
+        }
+    }
+    .coaches{
+        &__slider{
+            padding-left: 6px;
+            padding-right: 6px;
+            & .slick-dots{
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
+                font-size: 0px;
+                & li{
+                    & button{
+                        border: none;
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 50%;
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-sizing: border-box;
+                        background-color: transparent;
+                    }
+                }
+                & .slick-active{
+                    & button{
+                        border: 1px solid transparent;
+                        background-color: $accent-color;
+                    }
+                }
+            }
+        }
+        &__slider-count{
+            display: none;
+        }
+    }
+    .coach{
+        flex-direction:column;
+        margin-left: 6px;
+        margin-right: 6px;
+        box-shadow: 0px 4px 30px rgba(207, 207, 207, 0.25);
+        &__info{
+            margin: 0px;
+            width: 100%;
+            padding: 16px 56px 16px 16px;
+        }
+        &__image{
+            width: 100%;
+            height: 300px;
+        }
+        &__skill{
+            font-size:13px;
+        }
+        &__button{
+            margin-top: -35px;
+            margin-left: 100%;
+            height: 33px;
+            width: 33px;
+            border-radius: 50%;
+            padding: 0px;
+            font-size: 15px;
+            line-height: 0.9;
+            &--mobile{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &--full{
+                display: none;
+            }
+            & i{
+                margin-top: 2px;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .footer{
+        &__logo{
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     }
 }

@@ -5,6 +5,7 @@
   <title>Wedding Dance</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="src/styles/slick.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
   <header class="header">
     <div class="container">
       <div class="header__wrapper">
-        <div href="#" class="header__logo logo">
+        <div class="header__logo logo">
           <p class="logo__text">
             Wedding Dance
           </p>
@@ -99,13 +100,15 @@
             it becomes the favorite moment you like to play 
             on videos and photos. Feel the moment
           </p>
-          <button class="top__button">
+          <button class="top__button accent-button">
             Let's start
           </button>
         </div>
-        <div class="top__image">
-          <img src="src/assets/img/header-img.jpg" srcset="src/assets/img/header-img-2x.jpg 2x" alt="Wedding Dance">
-        </div>
+        <picture class="top__image">
+          <source srcset="src/assets/img/header-img-2x.jpg 2x">
+          <source media="screen and (max-width: 425)" srcset="src/assets/img/header-img-mobile.jpg">
+          <img src="src/assets/img/header-img.jpg" alt="Wedding Dance">
+        </picture>
       </div>
     </div>
   </section>
@@ -121,9 +124,9 @@
       </p>
       <div class="services__items">
         <div class="services__item service">
-          <div class="service__image">
+          <picture class="service__image">
             <img src="src/assets/img/services-img-1.jpg" alt="Service image">
-          </div>
+          </picture>
           <div class="service__description">
             <p class="service__name">
               For Bride and Groom
@@ -137,9 +140,9 @@
           </div>
         </div>
         <div class="services__item service">
-          <div class="service__image">
+          <picture class="service__image">
             <img src="src/assets/img/services-img-2.jpg" alt="Service image">
-          </div>
+          </picture>
           <div class="service__description">
             <p class="service__name">
               For Guests
@@ -156,9 +159,9 @@
           </div>
         </div>
         <div class="services__item service">
-          <div class="service__image">
+          <picture class="service__image">
             <img src="src/assets/img/services-img-3.jpg" alt="Service image">
-          </div>
+          </picture>
           <div class="service__description">
             <p class="service__name">
               Other events
@@ -175,7 +178,171 @@
     </div>
   </section>
 
+  <section class="advantages">
+    <div class="container">
+      <h2 class="title advantages__title">
+        What we offer
+      </h2>
+      <p class="subtitle advantages__subtitle">
+        Our goal is not only to teach you how to dance but also give the best unforgettable memories about preparing to your event
+      </p>
+      <div class="advantages__items">
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon1 advantage__icon"></i>
+          <p class="advantage__text">
+            Talented Coaches
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon2 advantage__icon"></i>
+          <p class="advantage__text">
+            Cozy rooms for training
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon3 advantage__icon"></i>
+          <p class="advantage__text">
+            Coffee, tea, and cookies
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon4 advantage__icon"></i>
+          <p class="advantage__text">
+            Good physical form
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon5 advantage__icon"></i>
+          <p class="advantage__text">
+            Self Confidence and success on your event
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon6 advantage__icon"></i>
+          <p class="advantage__text">
+            Exciting emotions and a lot of fun
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon7 advantage__icon"></i>
+          <p class="advantage__text">
+            Great photos from your event
+          </p>
+        </div>
+        <div class="advantage__item advantage">
+          <i class="icon icon-advantages-icon8 advantage__icon"></i>
+          <p class="advantage__text">
+            Spend hours together in happiness
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="coaches">
+    <div class="container">
+      <h2 class="title advantages__title">
+        Our Coaches
+      </h2>
+      <p class="subtitle advantages__subtitle">
+        Coaches in our school are not only perfect dancers but also have a big experience in coaching that is why you will feel really amazing after each of your class
+      </p>
+      <div class="coaches__slider-wrapper">
+        <div class="coaches__slider">
+          <div>
+            <div class="coaches__slider-item coach">
+              <picture class="coach__image">
+                <source srcset="src/assets/img/coach1-mobile.jpg" media="screen and (max-width: 425px)">
+                <img src="src/assets/img/coach1.jpg" alt="coach">
+              </picture>
+              <div class="coach__info">
+                <p class="coach__number">
+                  01
+                </p>
+                <h3 class="coach__name">
+                  Ann Walker
+                </h3>
+                <p class="coach__profession">
+                  Dancer
+                </p>
+                <p class="coach__skill">
+                  <span>Work experience</span> 8 years
+                </p>
+                <p class="coach__skill">
+                  <span>Teacher for</span> 3 years
+                </p>
+                <p class="coach__skill">
+                  <span>Style</span> Viennese Waltz, Salsa
+                </p>
+                <button class="coach__button coach__button--full accent-button">
+                  Let's start
+                </button>
+                <button class="coach__button coach__button--mobile accent-button">
+                  <i class="icon icon-lets-go-icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="coaches__slider-item coach">
+              <picture class="coach__image">
+                <img src="src/assets/img/coach2.jpg" alt="coach">
+              </picture>
+              <div class="coach__info">
+                <p class="coach__number">
+                  02
+                </p>
+                <h3 class="coach__name">
+                  Top Wilspon
+                </h3>
+                <p class="coach__profession">
+                  Dancer
+                </p>
+                <p class="coach__skill">
+                  <span>Work experience</span> 10 years
+                </p>
+                <p class="coach__skill">
+                  <span>Teacher for</span> 5 years
+                </p>
+                <p class="coach__skill">
+                  <span>Style</span> HipHop
+                </p>
+                <button class="coach__button coach__button--full accent-button">
+                  Let's start
+                </button>
+                <button class="coach__button coach__button--mobile accent-button">
+                  <i class="icon icon-lets-go-icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="coaches__slider-count">
+          <span class="coaches__slider-number">1</span>
+          of
+          <span class="coaches__slider-amount">4</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__logo logo">
+          <p class="logo__text">
+            Wedding Dance
+          </p>
+        </div>
+        <p class="footer__copyright">
+          Copyright &copy;
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="src/js/jquery-3.5.1.min.js"></script>
+  <script src="src/js/slick.min.js"></script>
   <script src="src/js/main.js"></script>
 </body>
 </html>
