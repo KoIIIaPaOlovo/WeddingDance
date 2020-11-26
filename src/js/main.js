@@ -2,19 +2,33 @@ document.addEventListener('DOMContentLoaded', function(){
     
     burgerButton=document.querySelector('.burger-button__lines');
     burgerMenu=document.querySelector('.burger-overlay');
-    burgerButton.addEventListener('click',function(){
+    navItems=document.querySelectorAll('.navigation__item');
+
+    // Функция открытия/закрытия бургер меню
+    function toggleBurger() {
         if(burgerMenu.classList.contains('burger-overlay--show')){
+            document.querySelector('body').classList.remove('body--noscroll');
             burgerMenu.classList.remove('burger-overlay--show');
             burgerButton.querySelector('.burger-button__line').classList.remove('burger-button__line--active');
         }
         else{
+            document.querySelector('body').classList.add('body--noscroll');
             burgerMenu.classList.add('burger-overlay--show');
             burgerButton.querySelector('.burger-button__line').classList.add('burger-button__line--active');
         }
-    });
+    }
+    // 
 
 
+    // Вешаем слушатели событий для бургера
+    burgerButton.addEventListener('click',toggleBurger);
+    for(navItem of navItems){
+        navItem.addEventListener('click',toggleBurger);
+    }
+    // 
+    
 
+    // Функция подбора номера слайдера
     $('.coaches__slider').on('reinit init afterChange', function(slick,currentSlide,nextSlide){
         if (currentSlide.options.slidesToScroll % 2 == 0)
         {
@@ -31,9 +45,11 @@ document.addEventListener('DOMContentLoaded', function(){
             $('.coaches__slider-count').children('.coaches__slider-amount').text(currentSlide.slideCount);
         }
     });
+    // 
 
     
-  $('.coaches__slider').slick({
+    // Slick слайдер
+    $('.coaches__slider').slick({
     infinite: false,
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -57,5 +73,14 @@ document.addEventListener('DOMContentLoaded', function(){
         }
       ]
   });
-    
+    // 
+
+    // Анимации при скролле (WOW.js)
+    wow = new WOW(
+                    {
+                      mobile:       false,       // default
+                    }
+                )
+    wow.init();
+    // 
   });
